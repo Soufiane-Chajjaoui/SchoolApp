@@ -8,12 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING , length = 2 ,name = "type")
+@MappedSuperclass
 public class Person {
 	
 	@Id
@@ -22,5 +19,8 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private Date bod;
+	private String email;
+	private String tele;
+	private String password;
 
 }
